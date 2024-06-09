@@ -72,6 +72,62 @@ db.restaurant.find({
         { "borough": { $ne: "Brooklyn" } }]
 }).sort({ "cuisine": -1 });
 
+/*14*/
+db.restaurant.find(
+  { name: { $regex: /^Wil/} },
+  {
+    restaurant_id: 1,
+    name: 1,
+    borough: 1,
+    cuisine: 1,
+    _id: 0
+  }
+).pretty()
+/*15*/
+db.restaurant.find(
+  { name: { $regex: /ces/} },
+  {
+    restaurant_id: 1,
+    name: 1,
+    borough: 1,
+    cuisine: 1,
+    _id: 0
+  }
+).pretty()
+/*16*/
+db.restaurant.find(
+  { name: { $regex: /Reg/} },
+  {
+    restaurant_id: 1,
+    name: 1,
+    borough: 1,
+    cuisine: 1,
+    _id: 0
+  }
+).pretty()
+/*17*/
+db.restaurant.find(
+  {
+    borough: "Bronx",
+    cuisine: { $in: ["American ", "Chinese"] }
+  }
+).pretty()
+/*18*/
+db.restaurant.find(
+  {
+    borough: { $in: ["Staten Island", "Queens", "Bronx", "Brooklyn"] }
+  },
+  {
+    restaurant_id: 1,
+    name: 1,
+    borough: 1,
+    cuisine: 1,
+    _id: 0
+  }
+).pretty()
+
+
+
   
   
   
