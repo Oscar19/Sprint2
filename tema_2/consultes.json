@@ -125,6 +125,46 @@ db.restaurant.find(
     _id: 0
   }
 ).pretty()
+/*19*/
+db.restaurant.find(
+  {
+    borough: { $nin: ["Staten Island", "Queens", "Bronx", "Brooklyn"] }
+  },
+  {
+    restaurant_id: 1,
+    name: 1,
+    borough: 1,
+    cuisine: 1,
+    _id: 0
+  }
+).pretty()
+/*20*/
+db.restaurant.find({
+    "grades.score": { $lt: 10 },
+  },
+  {
+    restaurant_id: 1,
+    borough: 1,
+    cuisine: 1,
+    }
+  ).pretty()
+/*21*/
+db.restaurant.find(
+  {
+    cuisine: "Seafood",
+    cuisine: { $nin: ["American ", "Chinese"] },
+    name: { $not: { $regex: /^Wil/, $options: 'i' } }
+  },
+  {
+    restaurant_id: 1,
+    name: 1,
+    borough: 1,
+    cuisine: 1,
+    _id: 0
+  }
+).pretty()
+
+
 
 
 
