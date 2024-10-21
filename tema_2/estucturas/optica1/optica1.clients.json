@@ -13,5 +13,6 @@
   "telefono": " ",
   "email": " ",
   "fecha_registro": "",
-  "recomendado_id": "ObjectId"
+  "recomendado_id": "ObjectId",
+  "ultimas_compras": "Object"
 }]
