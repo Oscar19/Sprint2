@@ -12,5 +12,6 @@
     "derecha": " "
   },
   "precio": " ",
-  "proveedor_id": "ObjectId"
+  "proveedor_id": "ObjectId",
+  "comprador": "Object"
 }]
